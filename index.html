@@ -1,0 +1,152 @@
+<html><head><base href="/" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANflix - Sua Plataforma de Streaming</title>
+<style>
+:root {
+  --primary-color: #2ecc71;
+  --dark-bg: #141414;
+  --title-color-1: #3498db;
+  --title-color-2: #2ecc71;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: white;
+}
+
+.header {
+  padding: 20px 50px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('https://source.unsplash.com/random/1920x1080/?movie') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: var(--title-color-1);
+}
+
+.hero p {
+  font-size: 1.8rem;
+  color: var(--title-color-2);
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--primary-color);
+  display: inline-block;
+}
+
+.movies-section {
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.movie-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  color: white;
+  font-size: 1.2rem;
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <a href="https://danflix.com" class="logo">DANflix</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Filmes e Séries Ilimitados</h1>
+      <p>Assista ao que você quiser</p>
+    </div>
+  </section>
+
+  <section class="movies-section">
+    <a href="https://www.youtube.com/watch?v=M3_XrtBGJJ0" target="_blank" class="movie-card">
+      <img alt="Cena dramática com personagens em um sonho profundo, efeitos visuais surreais e paisagens distorcidas" src="https://i1.sndcdn.com/artworks-000191911141-r51y8o-t500x500.jpg" width="400" height="600">
+      <div class="movie-title">Sherek e o Cogumelo Encantado</div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=N1vTG_gTA9U" target="_blank" class="movie-card">
+      <img alt="Batman em cena noturna, atmosfera sombria com iluminação dramática da cidade de Gotham" src="https://pbs.twimg.com/media/FmYtG1tXgAAnU2R.jpg" width="400" height="600">
+      <div class="movie-title">Em busca da Picanha</div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=XIv97tIImz8" target="_blank" class="movie-card">
+      <img alt="Cena da prisão com iluminação suave, foco em expressões emocionais dos personagens" src="https://imgs.search.brave.com/CCYQKMP0g4kK9A7lDW7TsBDU0NgnAXfXl3vtuISptpw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/OC84MS9TaGF3c2hh/bmtSZWRlbXB0aW9u/TW92aWVQb3N0ZXIu/anBnLzUxMnB4LVNo/YXdzaGFua1JlZGVt/cHRpb25Nb3ZpZVBv/c3Rlci5qcGc" width="400" height="600">
+      <div class="movie-title">The Shawshank Redemption</div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=FF92fJ5bvK4&list=PLFf6KN9ri01SyRKUT05UWhGvH3F1GcpvI" target="_blank" class="movie-card">
+      <img alt="Cena estilizada com personagens icônicos em ambiente retrô dos anos 70" src="https://m.media-amazon.com/images/S/pv-target-images/6e735d75e9147233c72226af48fb1cf2c0fe1918275b863a3e9800e09e7e2c43.jpg" width="400" height="600">
+      <div class="movie-title">O Poderoso Chefão</div>
+    </a>
+  </section>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(0,0,0,0.9)';
+      } else {
+        header.style.background = 'linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)';
+      }
+    });
+  </script>
+</body>
+</html>
